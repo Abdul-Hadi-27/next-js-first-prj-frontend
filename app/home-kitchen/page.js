@@ -4,13 +4,15 @@ import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 import React, { useEffect, useState } from 'react'
 
+
 const page = () => {
    const [homeKitchen, sethomeKitchen] = useState([])
    const router=useRouter()
+   const BASE_URL = "https://next-js-first-proj-backend-production.up.railway.app"
    useEffect(() => {
    const fetchHome=async ()=>{
     try {
-       const {data}=await axios.get('http://localhost:3001/home-kitchen')
+       const {data}=await axios.get(`${BASE_URL}/home-kitchen`)
        console.log(data)
        sethomeKitchen(data)
       

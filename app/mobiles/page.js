@@ -5,10 +5,11 @@ import React, { useEffect, useState } from 'react'
 
 const page = () => {
    const [mobile, setMobile] = useState([])
+   const BASE_URL = "https://next-js-first-proj-backend-production.up.railway.app"
    useEffect(() => {
    const fetchMobile=async ()=>{
     try {
-       const {data}=await axios.get('http://localhost:3001/mobiles')
+       const {data}=await axios.get(`${BASE_URL}/mobiles`)
        console.log(data)
        setMobile(data)
       

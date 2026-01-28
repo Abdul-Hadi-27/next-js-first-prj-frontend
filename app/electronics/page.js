@@ -6,11 +6,12 @@ import React, { useEffect, useState } from 'react'
 
 const page = () => {
    const [electronic, setElectronic] = useState([])
+   const BASE_URL = "https://next-js-first-proj-backend-production.up.railway.app"
    const router=useRouter()
    useEffect(() => {
    const fetchElectronics=async ()=>{
     try {
-       const {data}=await axios.get('http://localhost:3001/electronics')
+       const {data}=await axios.get(`${BASE_URL}/electronics`)
        console.log(data)
        setElectronic(data)
       
