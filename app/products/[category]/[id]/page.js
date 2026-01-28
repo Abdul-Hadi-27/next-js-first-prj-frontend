@@ -18,7 +18,7 @@ const Page = () => {
     const fetchData = async () => {
       try {
         const res = await axios.get(
-          `http://localhost:3001/${category}/${id}`
+          `https://next-js-first-proj-backend-production.up.railway.app/${category}/${id}`
         )
         setData(res.data)
       } catch (err) {
